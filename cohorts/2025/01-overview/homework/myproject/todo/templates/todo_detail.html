@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO Details</title>
+</head>
+<body>
+    <h1>{{ todo.title }}</h1>
+    <p>Description: {{ todo.description }}</p>
+    <p>Due Date: {{ todo.due_date }}</p>
+    <p>Status: {% if todo.is_resolved %}Resolved{% else %}Unresolved{% endif %}</p>
+
+    <a href="/todo/{{ todo.id }}/update/">Edit</a>
+    <a href="/todo/{{ todo.id }}/delete/">Delete</a>
+    <a href="/">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO List</title>
+</head>
+<body>
+    <h1>TODO List</h1>
+    <a href="/todo/create/">Create New TODO</a>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <a href="/todo/{{ todo.id }}/">{{ todo.title }}</a> - Due: {{ todo.due_date }} - 
+            {% if todo.is_resolved %}Resolved{% else %}Unresolved{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

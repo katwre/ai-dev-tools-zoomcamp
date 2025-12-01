@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if todo %}Edit TODO{% else %}Create TODO{% endif %}</title>
+</head>
+<body>
+    <h1>{% if todo %}Edit TODO{% else %}Create TODO{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{% if todo %}{{ todo.title }}{% endif %}" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description">{% if todo %}{{ todo.description }}{% endif %}</textarea><br>
+
+        <label for="due_date">Due Date:</label>
+        <input type="date" id="due_date" name="due_date" value="{% if todo %}{{ todo.due_date }}{% endif %}" required><br>
+
+        <label for="is_resolved">Resolved:</label>
+        <input type="checkbox" id="is_resolved" name="is_resolved" {% if todo and todo.is_resolved %}checked{% endif %}><br>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
