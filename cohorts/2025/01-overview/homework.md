@@ -26,7 +26,7 @@ We want to install Django. Ask AI to help you with that.
 What's the command you used for that?
 
 There could be multiple ways to do it. Put the one that AI suggested in the homework form.
-
+pip install django <-
 
 ## Question 2: Project and App
 
